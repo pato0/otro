@@ -40,12 +40,17 @@
         function keydownlistener (){
             let max_por_segundo = input_n_disp.value * input_n_sens.value;
             let max_por_minuto = input_n_disp.value * input_n_sens.value * (60/input_f_cens.value);
+            let max_por_hora = max_por_minuto * 60;
+            let max_por_dia = max_por_minuto*60*24;
+            let max_por_mes = max_por_minuto * 60 * 24 * 30;
+            let max_por_anio = max_por_minuto*60*24*365;
 //            temp = calcula (input_n_disp.value, input_n_sens.value, input_f_cens.value);
-            resp.innerHTML = "Maximo por segundo: " + max_por_segundo + " envios por segundo <br>";
-            resp.innerHTML += "Maximo por minuto: " + max_por_minuto + " envios por minuto <br>";
-            resp.innerHTML += "Maximo por hora: " + max_por_minuto*60 + " envios por hora <br>";
-            resp.innerHTML += "Maximo por dia: " + max_por_minuto*60*24 + " envios por dia <br>";
-            resp.innerHTML += "Maximo por anio: " + max_por_minuto*60*24*365 + " envios por anio <br>";
+            resp.innerHTML = "Maximo por segundo: " + max_por_segundo.toLocaleString() + " envios por segundo <br>";
+            resp.innerHTML += "Maximo por minuto: " + max_por_minuto.toLocaleString() + " envios por minuto <br>";
+            resp.innerHTML += "Maximo por hora: " + max_por_hora.toLocaleString() + " envios por hora <br>";
+            resp.innerHTML += "Maximo por dia: " + max_por_dia.toLocaleString() + " envios por dia <br>";
+            resp.innerHTML += "Maximo por mes: " + max_por_mes.toLocaleString() + " envios por mes <br>";
+            resp.innerHTML += "Maximo por anio: " + max_por_anio.toLocaleString() + " envios por anio <br>";
         }
 
         input_n_disp.addEventListener("keyup", keydownlistener);
